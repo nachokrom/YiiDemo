@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\ZayaSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Zayas';
+$this->title = 'Заявки';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="zaya-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Zaya', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать заявку', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -29,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'user_id',
-            'number_auto',
-            'comment',
-            'status',
+            'ID',
+            'Пользователь',
+            'Номер',
+            'Комментарий',
+            'Статус',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Zaya $model, $key, $index, $column) {

@@ -26,7 +26,7 @@ class Regform extends User
             [['login'], 'unique', 'message'=>'Такой логин уже используется'],
             [['phone'], 'match', 'pattern'=>'/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/', 'message'=>'Введите телефон в требуемом формате'],
             [['email'], 'email', 'message'=>'Введите адрес электронной почты в требуемом формате'],
-            [['password'], 'string', 'max'=>6, 'message'=>'Пароль должен быть от 6 символов'],
+            [['password'], 'string', 'min'=> 6, 'message'=>'Пароль должен быть от 6 символов'],
             [['login', 'password', 'fio', 'phone', 'email'], 'string', 'max' => 255],
         ];
     }

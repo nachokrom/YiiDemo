@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\Zaya $model */
 
-$this->title = 'Create Zaya';
+$this->title = 'Создание заявки';
 $this->params['breadcrumbs'][] = ['label' => 'Zayas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
