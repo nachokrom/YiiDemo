@@ -11,9 +11,9 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * UserController implements the CRUD actions for User model.
+ * LkController implements the CRUD actions for User model.
  */
-class UserController extends Controller
+class LkController extends Controller
 {
     /**
      * @inheritDoc
