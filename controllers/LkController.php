@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Regform;
 use app\models\User;
+use app\models\ZayaSearch;
 use app\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -33,6 +34,17 @@ class LkController extends Controller
         );
     }
 
+    public function beforeAction($action) {
+        if (Yii::$app->user->isGuest) {
+
+            $this->redirect(['/site/login']);
+            return false;
+
+        }
+
+        return true;
+    }
+
     /**
      * Lists all User models.
      *
@@ -40,7 +52,7 @@ class LkController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new UserSearch();
+        $searchModel = new ZayaSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [

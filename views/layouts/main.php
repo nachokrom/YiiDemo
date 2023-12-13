@@ -36,23 +36,46 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'brandUrl' => Yii::$app->homeUrl,
         'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
     ]);
+    
+    $items = [];
+
+    if ( Yii::$app->user->isGuest) {
+        $items[] = ['label' => 'Регистрация', 'url' => ['/user/create']];
+        $items[] = ['label' => 'Войти', 'url' => ['/site/login']];
+    } else {
+
+        $items[] = ['label' => 'Личный кабинет', 'url' => ['/lk']];
+        $items[] = '<li class="nav-item">'
+        . Html::beginForm(['/site/logout'])
+        . Html::submitButton(
+            'Выйти (' . Yii::$app->user->identity->login . ')',
+            ['class' => 'nav-link btn btn-link logout']
+        )
+        . Html::endForm()
+        . '</li>';
+
+    }
+
+
+
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
-        'items' => [
-            ['label' => 'Главная', 'url' => ['/site/index']],
-            ['label' => 'Регистрация', 'url' => ['/user/create']],
-            ['label' => 'Заявки', 'url' => ['/zaya/index']],
-            Yii::$app->user->isGuest
-                ? ['label' => 'Войти', 'url' => ['/site/login']]
-                : '<li class="nav-item">'
-                    . Html::beginForm(['/site/logout'])
-                    . Html::submitButton(
-                        'Выйти (' . Yii::$app->user->identity->login . ')',
-                        ['class' => 'nav-link btn btn-link logout']
-                    )
-                    . Html::endForm()
-                    . '</li>'
-        ]
+            'items' => $items,
+            /*[
+                /*['label' => 'Главная', 'url' => ['/site/index']],
+                ['label' => 'Регистрация', 'url' => ['/user/create']],
+                ['label' => 'Заявки', 'url' => ['/zaya/index']],
+                Yii::$app->user->isGuest
+                    ? ['label' => 'Войти', 'url' => ['/site/login']]
+                    : '<li class="nav-item">'
+                        . Html::beginForm(['/site/logout'])
+                        . Html::submitButton(
+                            'Выйти (' . Yii::$app->user->identity->login . ')',
+                            ['class' => 'nav-link btn btn-link logout']
+                        )
+                        . Html::endForm()
+                        . '</li>'
+            ]*/
     ]);
     NavBar::end();
     ?>
