@@ -27,7 +27,7 @@ class ZayaCreateForm extends Zaya
         return [
             [['number_auto', 'comment', 'status'], 'required'],
             [['user_id'], 'integer'],
-            [['number_auto', 'comment', 'status'], 'string', 'max' => 255],
+            [['number_auto', 'comment'], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
             [['status'], 'exist', 'skipOnError' => true, 'targetClass' => Status::class, 'targetAttribute' => ['status' => 'name']],
         ];

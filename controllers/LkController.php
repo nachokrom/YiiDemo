@@ -6,12 +6,14 @@ use Yii;
 use app\models\Regform;
 use app\models\User;
 use app\models\Zaya;
+use app\models\Status;
 use app\models\ZayaCreateForm;
 use app\models\ZayaSearch;
 use app\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * LkController implements the CRUD actions for User model.
@@ -113,13 +115,16 @@ class LkController extends Controller
         if ($this->request->isPost) {
             if ($model->load(Yii::$app->request->post())) {
                 $model->user_id = Yii::$app->user->identity->id;
-                $model->save();
+                $model->save(false);
                 return $this->redirect(['/lk']);
             }
         }
 
+        $statuses = Status::find()->all();
+        $statuses = ArrayHelper::getColumn($statuses, 'name');
         return $this->render('create', [
             'model' => $model,
+            'statuses' => $statuses,
         ]);
     }
 }
