@@ -12,11 +12,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-   <!-- <?= $form->field($model, 'user_id')->textInput() ?>-->
-
     <?= $form->field($model, 'number_auto')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'comment')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'comment')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'status')->textInput(['maxlength' => true]) ?>
 

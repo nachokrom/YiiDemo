@@ -6,6 +6,7 @@ use Yii;
 use app\models\Regform;
 use app\models\User;
 use app\models\Zaya;
+use app\models\ZayaCreateForm;
 use app\models\ZayaSearch;
 use app\models\UserSearch;
 use yii\web\Controller;
@@ -103,5 +104,22 @@ class LkController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionCreate()
+    {
+        $model = new ZayaCreateForm();
+
+        if ($this->request->isPost) {
+            if ($model->load(Yii::$app->request->post())) {
+                $model->user_id = Yii::$app->user->identity->id;
+                $model->save();
+                return $this->redirect(['/lk']);
+            }
+        }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 }

@@ -33,7 +33,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'user_id',
             'number_auto',
             'comment',
-            'timestamp',
             'status',
             [
                 'class' => ActionColumn::className(),
