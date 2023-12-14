@@ -53,7 +53,7 @@ class LkController extends Controller
     public function actionIndex()
     {
         $searchModel = new ZayaSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $dataProvider = $searchModel->searchForUser($this->request->queryParams, Yii::$app->user->identity->id);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
