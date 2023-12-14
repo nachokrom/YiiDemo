@@ -47,7 +47,7 @@ class Zaya extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            //'user_id' => 'Пользователь',
+            'user_id' => 'Пользователь',
             'number_auto' => 'Номер',
             'comment' => 'Коментарий',
             'status' => 'Статус',

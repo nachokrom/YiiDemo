@@ -27,18 +27,21 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            //['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+           // 'id',
             'user_id',
             'number_auto',
             'comment',
+            'timestamp',
             'status',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Zaya $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                },
+                'template' => '{view} {delete}',
+                
             ],
         ],
     ]); ?>
