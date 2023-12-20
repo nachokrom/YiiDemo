@@ -124,11 +124,9 @@ class LkController extends Controller
             }
         }
 
-        //$statuses = Status::find()->all();
-        //$statuses = ArrayHelper::getColumn($statuses, 'name');
         return $this->render('create', [
             'model' => $model,
-          //  'statuses' => $statuses,
+
         ]);
     }
 }
