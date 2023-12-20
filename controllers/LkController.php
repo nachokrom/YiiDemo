@@ -115,16 +115,20 @@ class LkController extends Controller
         if ($this->request->isPost) {
             if ($model->load(Yii::$app->request->post())) {
                 $model->user_id = Yii::$app->user->identity->id;
-                $model->save(false);
+
+                $model->status="На рассмотрении";
+
+                $model->save();
+
                 return $this->redirect(['/lk']);
             }
         }
 
-        $statuses = Status::find()->all();
-        $statuses = ArrayHelper::getColumn($statuses, 'name');
+        //$statuses = Status::find()->all();
+        //$statuses = ArrayHelper::getColumn($statuses, 'name');
         return $this->render('create', [
             'model' => $model,
-            'statuses' => $statuses,
+          //  'statuses' => $statuses,
         ]);
     }
 }

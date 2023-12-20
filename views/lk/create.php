@@ -20,8 +20,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $form->field($model, 'comment')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'status')->dropDownList($statuses) ?>
-
 
     <div class="form-group">
         <?= Html::submitButton('Создать', ['class' => 'btn btn-success']) ?>

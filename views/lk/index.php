@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //['class' => 'yii\grid\SerialColumn'],
 
            // 'id',
-            'user_id',
+            //'user_id',
             'number_auto',
             'comment',
             'status',
@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'urlCreator' => function ($action, Zaya $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                 },
-                'template' => '{view} {delete}',
+                'template' => '{view}',
                 
             ],
         ],
