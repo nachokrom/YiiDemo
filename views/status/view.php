@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /** @var app\models\Status $model */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Statuses', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Статус', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Delete', ['delete', 'name' => $model->name], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Вы уверены, что хотите удалить статус',
                 'method' => 'post',
             ],
         ]) ?>

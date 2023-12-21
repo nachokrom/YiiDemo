@@ -39,7 +39,7 @@ class Status extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => 'Name',
+            'name' => 'Имя',
         ];
     }
 
