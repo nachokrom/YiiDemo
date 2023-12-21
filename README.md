@@ -7,4 +7,4 @@
 </p>
 
 Данный проект предназначен для учебных целей в рамках сдачи Демо-экзамена 2024. Преподаватель Брыксина Е.С.
-Ссылка на макет для верстки https://www.figma.com/file/X6SRhK5aFbbyqPgrbCHNNY/Untitled?type=design&node-id=1-5&mode=design&t=mnALMvNyGNS5zES8-0
+Ссылка на макет для верстки 
