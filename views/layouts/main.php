@@ -84,7 +84,15 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <main id="main" class="flex-shrink-0" role="main">
     <div class="container">
         <?php if (!empty($this->params['breadcrumbs'])): ?>
-            <?= Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]) ?>
+            <?= 
+                Breadcrumbs::widget([
+                    'homeLink' => [ 
+                                    'label' => Yii::t('yii', 'Главная'),
+                                    'url' => Yii::$app->homeUrl,
+                                ],
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                ]) 
+                ?>
         <?php endif ?>
         <?= Alert::widget() ?>
         <?= $content ?>

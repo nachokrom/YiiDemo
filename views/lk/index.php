@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\ZayaSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Заявки';
+$this->title = 'Личный кабинет';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="zaya-index">

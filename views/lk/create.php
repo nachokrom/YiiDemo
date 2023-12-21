@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /** @var app\models\Zaya $model */
 
 $this->title = 'Создание заявки';
-$this->params['breadcrumbs'][] = ['label' => 'Zayas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Личный кабинет', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="zaya-create">
