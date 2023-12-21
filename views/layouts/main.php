@@ -32,7 +32,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <header id="header">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => 'Заглушка',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
     ]);
@@ -59,43 +59,23 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
 
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav'],
+        'options' => ['class' => 'navbar-nav d-flex '],
             'items' => $items,
-            /*[
-                /*['label' => 'Главная', 'url' => ['/site/index']],
-                ['label' => 'Регистрация', 'url' => ['/user/create']],
-                ['label' => 'Заявки', 'url' => ['/zaya/index']],
-                Yii::$app->user->isGuest
-                    ? ['label' => 'Войти', 'url' => ['/site/login']]
-                    : '<li class="nav-item">'
-                        . Html::beginForm(['/site/logout'])
-                        . Html::submitButton(
-                            'Выйти (' . Yii::$app->user->identity->login . ')',
-                            ['class' => 'nav-link btn btn-link logout']
-                        )
-                        . Html::endForm()
-                        . '</li>'
-            ]*/
     ]);
+    echo "<form class='navbar-form navbar-right' role='search'>
+       <div class='form-group has-feedback'>
+            <input id='searchbox' type='text' placeholder='Search' class='form-control'>
+            <span id='searchicon' class='fa fa-search form-control-feedback'></span>
+        </div>
+    </form>";
     NavBar::end();
     ?>
 </header>
 
 <main id="main" class="flex-shrink-0" role="main">
     <div class="container">
-        <?php if (!empty($this->params['breadcrumbs'])): ?>
-            <?= 
-                Breadcrumbs::widget([
-                    'homeLink' => [ 
-                                    'label' => Yii::t('yii', 'Главная'),
-                                    'url' => Yii::$app->homeUrl,
-                                ],
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ]) 
-                ?>
-        <?php endif ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+        
+        
     </div>
 </main>
 
