@@ -21,11 +21,14 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Создать заявку', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php  // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php   //echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
+        'filterModel' => $searchModel,
+        'summary'=>'Заявки <b>{begin}-{end}</b> из <b>{totalCount}</b> Заявок.', 
+        'emptyText' => 'Ничего не найдено.',
+        
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
 
@@ -42,6 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'template' => '{view}',
                 
             ],
+            
         ],
     ]); ?>
 

@@ -2,8 +2,8 @@
 
 /** @var yii\web\View $this */
 
-use yii\bootstrap5\ActiveForm;
-use yii\bootstrap5\Html;
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
 $this->title = 'Демо-главная';
 ?>

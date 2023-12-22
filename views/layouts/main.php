@@ -64,7 +64,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     ]);
     echo "<form class='navbar-form navbar-right' role='search'>
        <div class='form-group has-feedback'>
-            <input id='searchbox' type='text' placeholder='Search' class='form-control'>
+            <input id='searchbox' type='text' placeholder='Поиск' class='form-control'>
             <span id='searchicon' class='fa fa-search form-control-feedback'></span>
         </div>
     </form>";
@@ -74,8 +74,16 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
 <main id="main" class="flex-shrink-0" role="main">
     <div class="container">
-        
-        
+        <div class="container">
+            <?php if (!empty($this->params['breadcrumbs'])): ?>
+                <?= Breadcrumbs::widget([
+                    'homeLink' => ['label' => 'Главная', 'url' => '/web'],
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                ]) ?>
+            <?php endif ?>
+            <?= Alert::widget() ?>
+            <?= $content ?>
+        </div>    
     </div>
 </main>
 
